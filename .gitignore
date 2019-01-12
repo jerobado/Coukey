@@ -19,5 +19,12 @@ $RECYCLE.BIN/
 *.lnk
 
 # =========================
-# Operating System Files
+# Operating System Files and Folders
 # =========================
+/_guide.txt
+*.pyc
+
+# Folders
+.idea/
+.vscode
+__pycache__/
