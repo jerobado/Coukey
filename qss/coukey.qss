@@ -1,0 +1,17 @@
+#CoukeyWindow {
+    background-color: white;
+}
+
+#keyLabel {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    color: black;
+}
+
+#keyFrequencyLabel {
+    color: #414141;
+}
+
+#keyTotal {
+    color: #414141;
+}
