@@ -6,22 +6,23 @@ import unittest
 
 import keyboard
 
-from src.core.coukey import *
+# from src.core.coukey import *
 from src.main import main
-from src.gui.main_gui import (CoukeyWidget,
+from src.gui.main_gui import (CoukeyWindow,
                               __appname__,
                               __version__)
 
-
+# [] TODO: how do you test a separate GUI?
 LAST_KEY = None
 KEY_TOTAL = 0
-
+__test_appname__ = 'Coukey'
+__test_version__ = '0.1'
 
 class CoukeyTest(unittest.TestCase):
 
     def setUp(self):
 
-        self.window = CoukeyWidget()
+        self.window = CoukeyWindow()
         self.TEST_LAST_KEY = 'enter'
         self.TEST_KEY_TOTAL = 0
         keyboard.hook(self.__test_key_listener)
@@ -39,7 +40,13 @@ class CoukeyTest(unittest.TestCase):
 
         self.assertEqual(main(), 0)
 
-    def test_CoukeyWidget_windowTitle(self):
+    def test_CoukeyWindow_windowTitle_version(self):
 
-        self.assertEqual(self.window.windowTitle(), f'{__appname__} {__version__}')
+        self.assertEqual(self.window.windowTitle(), f'{__test_appname__} {__test_version__}')
     
+    def test_CoukeyWindow_objectNames(self):
+
+        self.assertEqual(self.window.keyLabel.objectName(), 'keyLabel')
+        self.assertEqual(self.window.keyFrequencyLabel.objectName(), 'keyFrequencyLabel')
+        self.assertEqual(self.window.keyTotal.objectName(), 'keyTotal')
+        self.assertEqual(self.window.objectName(), 'CoukeyWindow')
