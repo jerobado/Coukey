@@ -1,9 +1,5 @@
 # Main Graphical User Interface (GUI) of Coukey
 
-# TODOs
-# [x] create main UI
-# [x] hook keyboard
-
 from collections import Counter
 import keyboard
 from PyQt5.QtCore import Qt
@@ -12,13 +8,12 @@ from PyQt5.QtWidgets import (QApplication,
                              QLabel,
                              QHBoxLayout,
                              QVBoxLayout)
+from src.resources.constant import (__appname__,
+                                    __version__,
+                                    COUKEY_QSS_FILE)
 
 
-__appname__ = 'Coukey'
-__version__ = '0.1'
-
-
-class CoukeyWidget(QWidget):
+class CoukeyWindow(QWidget):
 
     def __init__(self, parent=None):
 
@@ -40,10 +35,17 @@ class CoukeyWidget(QWidget):
 
     def _properties(self):
 
+        self.keyLabel.setObjectName('keyLabel')
         self.keyLabel.setAlignment(Qt.AlignCenter)
+
+        self.keyFrequencyLabel.setObjectName('keyFrequencyLabel')
         self.keyFrequencyLabel.setAlignment(Qt.AlignCenter)
+
+        self.keyTotal.setObjectName('keyTotal')
         self.keyTotal.setAlignment(Qt.AlignCenter)
         
+        self.setObjectName('CoukeyWindow')
+        self.setStyleSheet(COUKEY_QSS_FILE)
         self.setWindowTitle(f'{__appname__} {__version__}')
         self.resize(253, 73)
 

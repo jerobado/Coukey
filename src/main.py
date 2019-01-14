@@ -20,13 +20,13 @@ License: GPL-3.0
 import sys
 sys.path.append('..')
 from PyQt5.QtWidgets import QApplication
-from src.gui.main_gui import CoukeyWidget
+from src.gui.main_gui import CoukeyWindow
 
 APP = QApplication(sys.argv)
 
 def main():
 
-    window = CoukeyWidget()
+    window = CoukeyWindow()
     window.show()
     return APP.exec()
 
