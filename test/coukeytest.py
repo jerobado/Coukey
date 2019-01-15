@@ -3,9 +3,11 @@
 import sys
 sys.path.append('..')
 import unittest
-
 import keyboard
 
+from PyQt5.QtCore import Qt
+
+# [] TODO: start testing coukey.py
 # from src.core.coukey import *
 from src.main import main
 from src.gui.main_gui import (CoukeyWindow,
@@ -16,7 +18,7 @@ from src.gui.main_gui import (CoukeyWindow,
 LAST_KEY = None
 KEY_TOTAL = 0
 __test_appname__ = 'Coukey'
-__test_version__ = '0.1'
+__test_version__ = '0.1.1'
 
 class CoukeyTest(unittest.TestCase):
 
@@ -48,5 +50,5 @@ class CoukeyTest(unittest.TestCase):
 
         self.assertEqual(self.window.keyLabel.objectName(), 'keyLabel')
         self.assertEqual(self.window.keyFrequencyLabel.objectName(), 'keyFrequencyLabel')
-        self.assertEqual(self.window.keyTotal.objectName(), 'keyTotal')
+        self.assertEqual(self.window.keyTotalLabel.objectName(), 'keyTotalLabel')
         self.assertEqual(self.window.objectName(), 'CoukeyWindow')

@@ -31,7 +31,7 @@ class CoukeyWindow(QWidget):
 
         self.keyLabel = QLabel(self.LAST_KEY)
         self.keyFrequencyLabel = QLabel(f'Frequency: {self.LAST_KEY_FREQUENCY}')
-        self.keyTotal = QLabel(f'Total: {self.KEY_TOTAL}')
+        self.keyTotalLabel = QLabel(f'Total: {self.KEY_TOTAL}')
 
     def _properties(self):
 
@@ -41,12 +41,13 @@ class CoukeyWindow(QWidget):
         self.keyFrequencyLabel.setObjectName('keyFrequencyLabel')
         self.keyFrequencyLabel.setAlignment(Qt.AlignCenter)
 
-        self.keyTotal.setObjectName('keyTotal')
-        self.keyTotal.setAlignment(Qt.AlignCenter)
+        self.keyTotalLabel.setObjectName('keyTotalLabel')
+        self.keyTotalLabel.setAlignment(Qt.AlignCenter)
         
         self.setObjectName('CoukeyWindow')
         self.setStyleSheet(COUKEY_QSS_FILE)
         self.setWindowTitle(f'{__appname__} {__version__}')
+        self.setWindowFlags(Qt.WindowStaysOnTopHint)
         self.resize(253, 73)
 
     def _layouts(self):
@@ -54,7 +55,7 @@ class CoukeyWindow(QWidget):
         vertical = QVBoxLayout()
         vertical.addWidget(self.keyLabel)
         vertical.addWidget(self.keyFrequencyLabel)
-        vertical.addWidget(self.keyTotal)
+        vertical.addWidget(self.keyTotalLabel)
     
         self.setLayout(vertical)
 
@@ -75,9 +76,14 @@ class CoukeyWindow(QWidget):
             # display results in GUI and console
             self.keyLabel.setText(self.LAST_KEY)
             self.keyFrequencyLabel.setText(f'Frequency: {self.LAST_KEY_FREQUENCY}')
-            self.keyTotal.setText(f'Total: {self.KEY_TOTAL}')
+            self.keyTotalLabel.setText(f'Total: {self.KEY_TOTAL}')
 
             print(f'{self.KEY_TOTAL}: {self.LAST_KEY} ({self.KEY_COUNTER[self.LAST_KEY]})')            
+
+    def keyPressEvent(self, event):
+
+        if event.modifiers() & Qt.ControlModifier and event.key() == Qt.Key_Q:
+            self.close()
 
     def resizeEvent(self, event):
 

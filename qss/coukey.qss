@@ -1,5 +1,5 @@
 #CoukeyWindow {
-    background-color: white;
+    background-color: #ffffff;
 }
 
 #keyLabel {
@@ -12,6 +12,6 @@
     color: #414141;
 }
 
-#keyTotal {
+#keyTotalLabel {
     color: #414141;
 }
