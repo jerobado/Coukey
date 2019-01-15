@@ -21,8 +21,8 @@ import sys
 sys.path.append('..')
 from PyQt5.QtWidgets import QApplication
 from src.gui.main_gui import CoukeyWindow
+from src.resources.constant import APP
 
-APP = QApplication(sys.argv)
 
 def main():
 
