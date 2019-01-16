@@ -9,7 +9,7 @@ Things that it she can do:
 
 Tools and Dependencies
 * Python 3.7.1
-* PyQt 5.11.
+* PyQt 5.11.3        # [x] TODO: what's your version?
 * keyboard 0.13.2
 
 Author: Jero Bado

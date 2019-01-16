@@ -1,6 +1,9 @@
 # Main Graphical User Interface (GUI) of Coukey
 
+# standard library
 from collections import Counter
+
+# third-party libraries
 import keyboard
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (QApplication,
@@ -8,6 +11,8 @@ from PyQt5.QtWidgets import (QApplication,
                              QLabel,
                              QHBoxLayout,
                              QVBoxLayout)
+
+# coukey files
 from src.resources.constant import (__appname__,
                                     __version__,
                                     COUKEY_QSS_FILE)

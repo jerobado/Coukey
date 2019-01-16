@@ -1,3 +1,5 @@
+# [] TODO: continue coding
+
 """ Core operations of Coukey
 
 + start_listening()
